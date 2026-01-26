@@ -1,0 +1,56 @@
+import { cva, type VariantProps } from "class-variance-authority"
+import type { ComponentProps, ReactNode } from "react"
+import { Text } from "../Text/Text"
+
+export const badgeVariants = cva(
+	"inline-flex items-center justify-center rounded-full",
+	{
+		variants: {
+			variant: {
+				primary: "bg-green-light",
+				secundary: "bg-pink-light",
+			},
+			size: {
+				sm: "py-0.5 px-2",
+			},
+		},
+		defaultVariants: {
+			variant: "primary",
+			size: "sm",
+		},
+	},
+)
+
+export const badgeTextVariants = cva("", {
+	variants: {
+		variant: {
+			primary: "text-green-dark",
+			secundary: "text-pink-dark",
+		},
+	},
+	defaultVariants: {
+		variant: "primary",
+	},
+})
+
+interface BadgeProps
+	extends ComponentProps<"div">,
+		VariantProps<typeof badgeVariants> {
+	children: ReactNode
+}
+
+export function Badge({
+	variant,
+	size,
+	className,
+	children,
+	...props
+}: BadgeProps) {
+	return (
+		<div className={badgeVariants({ variant, size, className })} {...props}>
+			<Text variant="body-sm-bold" className={badgeTextVariants({ variant })}>
+				{children}
+			</Text>
+		</div>
+	)
+}
