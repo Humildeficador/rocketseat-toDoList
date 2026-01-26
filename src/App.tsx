@@ -10,6 +10,8 @@ export function App() {
 				<Text variant={"body-sm"}>Hello World!</Text>
 				<Text variant={"body-sm-bold"}>Hello World!</Text>
 			</div>
+
+			<div className="flex gap-1"></div>
 		</div>
 	)
 }
