@@ -7,6 +7,7 @@ import XIcon from "./assets/icons/x.svg?react"
 import { Badge } from "./components/Badge/Badge"
 import { Button } from "./components/Button/Button"
 import { ButtonIcon } from './components/ButtonIcon/ButtonIcon'
+import { Checkbox } from './components/Checkbox/Checkbox'
 import { Icon } from "./components/Icon/Icon"
 import { Input } from './components/Input/Input'
 import { Text } from "./components/Text/Text"
@@ -46,6 +47,9 @@ export function App() {
 			</div>
 			<div>
 				<Input/>
+			</div>
+			<div>
+				<Checkbox  />
 			</div>
 		</div>
 	)
