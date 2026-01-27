@@ -7,6 +7,7 @@ import XIcon from "./assets/icons/x.svg?react"
 import { Badge } from "./components/Badge/Badge"
 import { Button } from "./components/Button/Button"
 import { ButtonIcon } from './components/ButtonIcon/ButtonIcon'
+import { Card } from './components/Card/Card'
 import { Checkbox } from './components/Checkbox/Checkbox'
 import { Icon } from "./components/Icon/Icon"
 import { Input } from './components/Input/Input'
@@ -50,6 +51,9 @@ export function App() {
 			</div>
 			<div>
 				<Checkbox  />
+			</div>
+			<div>
+				<Card size={'md'}>Olá Mundo</Card>
 			</div>
 		</div>
 	)
