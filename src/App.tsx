@@ -8,12 +8,13 @@ import { Badge } from "./components/Badge/Badge"
 import { Button } from "./components/Button/Button"
 import { ButtonIcon } from './components/ButtonIcon/ButtonIcon'
 import { Icon } from "./components/Icon/Icon"
+import { Input } from './components/Input/Input'
 import { Text } from "./components/Text/Text"
 
 export function App() {
 	return (
-		<div className="grid gap-3">
-			<div className="flex flex-col gap-1">
+		<div className="grid gap-10">
+			<div className="flex flex-col gap-2">
 				<Text variant={"body-md-bold"} className="text-pink-base">
 					Hello World!
 				</Text>
@@ -21,7 +22,7 @@ export function App() {
 				<Text variant={"body-sm-bold"}>Hello World!</Text>
 			</div>
 
-			<div className="flex gap-1">
+			<div className="flex gap-2">
 				<Icon svg={TrashIcon} className="fill-green-base" />
 				<Icon svg={CheckIcon} />
 				<Icon svg={PencilIcon} />
@@ -30,7 +31,7 @@ export function App() {
 				<Icon svg={SpinnerIcon} animate />
 			</div>
 
-			<div>
+			<div className='flex gap-2'>
 				<Badge variant={"secundary"}>5</Badge>
 				<Badge variant={"primary"}>2 de 5</Badge>
 			</div>
@@ -42,6 +43,9 @@ export function App() {
 				<ButtonIcon icon={TrashIcon}/>
 				<ButtonIcon variant={'secundary'} icon={TrashIcon}/>
 				<ButtonIcon variant={'terciary'} icon={TrashIcon}/>
+			</div>
+			<div>
+				<Input/>
 			</div>
 		</div>
 	)
