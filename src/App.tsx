@@ -6,12 +6,12 @@ import TrashIcon from "./assets/icons/trash.svg?react"
 import XIcon from "./assets/icons/x.svg?react"
 import { Badge } from "./components/Badge/Badge"
 import { Button } from "./components/Button/Button"
-import { ButtonIcon } from './components/ButtonIcon/ButtonIcon'
-import { Card } from './components/Card/Card'
-import { Checkbox } from './components/Checkbox/Checkbox'
-import { Container } from './components/Container/Container'
+import { ButtonIcon } from "./components/ButtonIcon/ButtonIcon"
+import { Card } from "./components/Card/Card"
+import { Checkbox } from "./components/Checkbox/Checkbox"
+import { Container } from "./components/Container/Container"
 import { Icon } from "./components/Icon/Icon"
-import { Input } from './components/Input/Input'
+import { Input } from "./components/Input/Input"
 import { Text } from "./components/Text/Text"
 
 export function App() {
@@ -33,26 +33,31 @@ export function App() {
 					<Icon svg={XIcon} />
 					<Icon svg={SpinnerIcon} animate />
 				</div>
-				<div className='flex gap-2'>
+				<div className="flex gap-2">
 					<Badge variant={"secundary"}>5</Badge>
 					<Badge variant={"primary"}>2 de 5</Badge>
+					<Badge variant={"primary"} loading>
+						2 de 5
+					</Badge>
 				</div>
 				<div>
 					<Button icon={PlusIcon}>Nova Tarefa</Button>
 				</div>
-				<div className='flex gap-2'>
-					<ButtonIcon icon={TrashIcon}/>
-					<ButtonIcon variant={'secundary'} icon={TrashIcon}/>
-					<ButtonIcon variant={'terciary'} icon={TrashIcon}/>
+				<div className="flex gap-2">
+					<ButtonIcon icon={TrashIcon} />
+					<ButtonIcon variant={"secundary"} icon={TrashIcon} />
+					<ButtonIcon variant={"terciary"} icon={TrashIcon} />
+					<ButtonIcon variant={"terciary"} icon={TrashIcon} loading />
 				</div>
 				<div>
-					<Input/>
+					<Input />
 				</div>
 				<div>
-					<Checkbox  />
+					<Checkbox />
+					<Checkbox loading />
 				</div>
 				<div>
-					<Card size={'md'}>Olá Mundo</Card>
+					<Card size={"md"}>Olá Mundo</Card>
 				</div>
 			</div>
 		</Container>

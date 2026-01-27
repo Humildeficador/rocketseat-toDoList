@@ -1,6 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps } from "react"
 import { Icon } from "../Icon/Icon"
+import { Skeleton } from "../Skeleton/Skeleton"
 
 export const buttonIconVariants = cva(
 	`
@@ -9,6 +10,7 @@ export const buttonIconVariants = cva(
 	{
 		variants: {
 			variant: {
+				none: "",
 				primary: "bg-green-base hover:bg-green-dark",
 				secundary: "bg-gray-200 hover:bg-pink-base",
 				terciary: "bg-transparent hover:bg-gray-200",
@@ -31,6 +33,7 @@ export const buttonIconVariants = cva(
 export const buttonIconIconVariants = cva("transition", {
 	variants: {
 		variant: {
+			none: "",
 			primary: "fill-white",
 			secundary: "fill-pink-base group-hover:fill-white",
 			terciary: "fill-gray-300 group-hover:fil-gray-300",
@@ -49,6 +52,7 @@ interface ButtonIconProps
 	extends Omit<ComponentProps<"button">, "size" | "disabled">,
 		VariantProps<typeof buttonIconVariants> {
 	icon: ComponentProps<typeof Icon>["svg"]
+	loading?: boolean
 }
 
 export function ButtonIcon({
@@ -57,17 +61,24 @@ export function ButtonIcon({
 	disabled,
 	className,
 	icon,
+	loading,
 	...props
 }: ButtonIconProps) {
+	if (loading) {
+		return (
+			<Skeleton
+				rounded={"sm"}
+				className={buttonIconVariants({ variant: "none", size, className })}
+			/>
+		)
+	}
+
 	return (
 		<button
 			className={buttonIconVariants({ variant, size, disabled, className })}
 			{...props}
 		>
-			<Icon
-				svg={icon}
-				className={buttonIconIconVariants({ variant, size })}
-			/>
+			<Icon svg={icon} className={buttonIconIconVariants({ variant, size })} />
 		</button>
 	)
 }
