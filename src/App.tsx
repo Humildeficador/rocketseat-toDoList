@@ -6,6 +6,7 @@ import TrashIcon from "./assets/icons/trash.svg?react"
 import XIcon from "./assets/icons/x.svg?react"
 import { Badge } from "./components/Badge/Badge"
 import { Button } from "./components/Button/Button"
+import { ButtonIcon } from './components/ButtonIcon/ButtonIcon'
 import { Icon } from "./components/Icon/Icon"
 import { Text } from "./components/Text/Text"
 
@@ -36,6 +37,11 @@ export function App() {
 
 			<div>
 				<Button icon={PlusIcon}>Nova Tarefa</Button>
+			</div>
+			<div className='flex gap-2'>
+				<ButtonIcon icon={TrashIcon}/>
+				<ButtonIcon variant={'secundary'} icon={TrashIcon}/>
+				<ButtonIcon variant={'terciary'} icon={TrashIcon}/>
 			</div>
 		</div>
 	)
