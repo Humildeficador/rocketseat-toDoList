@@ -1,7 +1,7 @@
 import { cva, cx, type VariantProps } from "class-variance-authority"
 import type { ComponentProps } from "react"
-import { Text } from "../Text/Text"
 import { Skeleton } from "../Skeleton/Skeleton"
+import { Text } from "../Text/Text"
 
 export const badgeVariants = cva(
 	"inline-flex items-center justify-center rounded-full",
