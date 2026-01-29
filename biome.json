@@ -24,12 +24,16 @@
 			"semicolons":"asNeeded"
 		}
 	},
-
 	"css": {
 		"parser": {
 			"tailwindDirectives": true
 		}
 	},
+	"json": {
+    "formatter": {
+      "enabled": true
+    }
+  },
 	"assist": {
 		"enabled": true,
 		"actions": {
